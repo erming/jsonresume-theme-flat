@@ -1,5 +1,11 @@
+var _ = require("lodash");
+var fs = require("fs");
+
+const FILEPATH = "./resume.template";
+
 module.exports = {
 	render: function(resume) {
-		return "template";
+		var tpl = fs.readFileSync(FILEPATH);
+		return _.template(tpl, resume);
 	}
 };

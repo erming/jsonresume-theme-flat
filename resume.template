@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<style>
+	body {
+		margin: 60px 40px;
+	}
+	</style>
+	
+	</head>
+	<body>
+	
+	<pre>
+	First Name: <%= bio.firstName %>
+	Last Name: <%= bio.lastName %>
+	</pre>
+	
+	</body>
+</html>
