@@ -3,7 +3,7 @@
 	<head>
 	
 	<meta charset="utf-8">
-	<title><%= bio.firstName + " " + bio.lastName %></title>
+	<title>{{bio.firstName}} {{bio.lastName}}</title>
 	
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
@@ -121,8 +121,8 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-8">
-					<h1><%= (bio.firstName || "") + " " + (bio.lastName || "") %></h1>
-					<h2><%= (bio.location.city || "") %></h2>
+					<h1>{{bio.firstName}} {{bio.lastName}}</h1>
+					<h2>{{bio.location.city}}</h2>
 				</div>
 			</div>
 		</div>
@@ -134,36 +134,41 @@
 					<h3>About</h3>
 				</aside>
 				<div class="col-sm-8">
-					<p><%= (bio.summary || "") %></p>
+					<p>{{bio.summary}}</p>
 				</div>
 			</section>
+			{{#work.length}}
 			<section id="work" class="row">
 				<aside class="col-sm-4">
 					<h3>Work</h3>
 				</aside>
 				<div class="col-sm-8">
-				<% _.forEach(work, function(w) { %>
+				{{#work}}
 				<div class="item">
-					<h4><%= (w.company || "") %></h4>
-					<strong><%= w.position %></strong>
-					<p><%= (w.summary || "") %></p>
+					<h4>{{company}}</h4>
+					<strong>{{position}}</strong>
+					<p>{{summary}}</p>
 				</div>
-				<% }) %>
+				{{/work}}
 				</div>
 			</section>
+			{{/work.length}}
+			{{#education.length}}
 			<section id="education" class="row">
 				<aside class="col-sm-4">
 					<h3>Education</h3>
 				</aside>
 				<div class="col-sm-8">
-				<% _.forEach(education, function(e) { %>
+				{{#education}}
 				<div class="item">
-					<h4><%= (e.institution || "") %></h4>
-					<strong><%= (e.area || "") %>, <%= (e.studyType || "") %></strong>
+					<h4>{{institution}}</h4>
+					<strong>{{area}}, {{studyType}}</strong>
 				</div>
-				<% }) %>
+				{{/education}}
 				</div>
 			</section>
+			{{/education.length}}
+			{{#skills.length}}
 			<section id="skills" class="row">
 				<aside class="col-sm-4">
 					<h3>Skills</h3>
@@ -171,33 +176,36 @@
 				<div class="col-sm-8">
 					<div class="row">
 						<ul>
-						<% _.forEach(skills, function(s) { %>
+						{{#skills}}
 						<li class="col-xs-6">
-							<h4><%= (s.name || "") %></h4>
+							<h4>{{name}}</h4>
 							<ul>
-							<% _.forEach(s.keywords, function(k) { %>
-								<li><%= (k || "") %></li>
-							<% }) %>
+							{{#keywords}}
+								<li>{{.}}</li>
+							{{/keywords}}
 							</ul>
 						</li>
-						<% }) %>
+						{{/skills}}
 						</ul>
 					</div>
 				</div>
 			</section>
+			{{/skills.length}}
+			{{#references.length}}
 			<section id="references" class="row">
 				<aside class="col-sm-4">
 					<h3>References</h3>
 				</aside>
 				<div class="col-sm-8">
-					<% _.forEach(references, function(r) { %>
+					{{#references}}
 					<blockquote>
-						<p><%= (r.reference || "") %></p>
-						<strong>— <%= (r.name || "") %></strong>
+						<p>{{reference}}</p>
+						<strong>— {{name}}</strong>
 					</blockquote>
-					<% }) %>
+					{{/references}}
 				</div>
 			</section>
+			{{/references.length}}
 		</div>
 	</div>
 	
