@@ -18,7 +18,12 @@ http.createServer(function(req, res) {
 
 console.log("Preview: http://localhost:8080/");
 console.log("Serving..");
-
+	
 function render() {
-	return theme.render(resume);
+	try {
+		return theme.render(resume);
+	} catch(e) {
+		console.log(e.message);
+		return "";
+	}
 }

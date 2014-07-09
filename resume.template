@@ -3,19 +3,193 @@
 	<head>
 	
 	<meta charset="utf-8">
+	<title><%= bio.firstName + " " + bio.lastName %></title>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+	
 	<style>
+	@import url(
+		http://fonts.googleapis.com/css?family=Lato:400,700
+	);
 	body {
-		margin: 60px 40px;
+		font-family: Lato, sans-serif;
+		color: #2C3E50;
+		margin: 0;
+		margin-bottom: 80px;
+	}
+	a {
+		transition: opacity .2s;
+	}
+	a:hover {
+		text-decoration: none;
+		opacity: .8;
+	}
+	p {
+		line-height: 1.5;
+		text-align: justify;
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin-top: 0;
+	}
+	h3 {
+		color: #f1c40f;
+	}
+	blockquote {
+		border-left: 5px solid #e7e9ec;
+		font-size: 14px;
+	}
+	blockquote p {
+		text-align: left;
+	}
+	ul,
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li ul li {
+		list-style: disc;
+		margin-left: 30px;
+	}
+	.container {
+		max-width: 750px;
+		padding: 0 30px;
+	}
+	#wip {
+		background: #f1c40f;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 10px 16px;
+		position: absolute;
+		right: 50px;
+		top: 0px;
+		word-spacing: 2px;
+	}
+	#wip .octicon {
+		margin-right: 8px;
+	}
+	#header {
+		background: #f4f6f6;
+		padding: 70px 0;
+	}
+	#content {
+		padding: 40px 0;
+	}
+	#content aside {
+		padding-right: 20px;
+		text-align: right;
+	}
+	#content .row + .row {
+		margin-top: 40px;
+	}
+	#content .position {
+		display: block;
+		margin-bottom: .5em;
+	}
+	
+	@media (max-width: 768px) {
+		#header {
+			text-align: center;
+		}
+		#content aside {
+			padding-right: 0;
+			text-align: left;
+		}
 	}
 	</style>
 	
 	</head>
 	<body>
 	
-	<pre>
-	First Name: <%= bio.firstName %>
-	Last Name: <%= bio.lastName %>
-	</pre>
+	<header id="header">
+		<div class="container">
+			<a href="https://github.com/erming/jsonresume-theme-flat" id="wip">
+				<span class="octicon octicon-mark-github"></span>
+				Work in progress
+			</a>
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-8">
+					<h1><%= (bio.firstName || "") + " " + (bio.lastName || "") %></h1>
+					<h2><%= (bio.location.city || "") %></h2>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="content">
+		<div class="container">
+			<div id="about" class="row">
+				<aside class="col-sm-4">
+					<h3>About</h3>
+				</aside>
+				<div class="col-sm-8">
+					<p><%= (bio.summary || "") %></p>
+				</div>
+			</div>
+			<div id="work" class="row">
+				<aside class="col-sm-4">
+					<h3>Work</h3>
+				</aside>
+				<div class="col-sm-8">
+				<% _.forEach(work, function(w) { %>
+					<h4><%= (w.company || "") %></h4>
+					<strong class="position"><%= w.position %></strong>
+					<p><%= (w.summary || "") %></p>
+				<% }) %>
+				</div>
+			</div>
+			<div id="education" class="row">
+				<aside class="col-sm-4">
+					<h3>Education</h3>
+				</aside>
+				<div class="col-sm-8">
+				<% _.forEach(education, function(e) { %>
+					<h4><%= (e.institution || "") %></h4>
+					<strong class="position"><%= (e.area || "") %>, <%= (e.studyType || "") %></strong>
+				<% }) %>
+				</div>
+			</div>
+			<div id="skills" class="row">
+				<aside class="col-sm-4">
+					<h3>Skills</h3>
+				</aside>
+				<div class="col-sm-8">
+					<div class="row">
+						<ul>
+						<% _.forEach(skills, function(s) { %>
+						<li class="col-xs-6">
+							<h4><%= (s.name || "") %></h4>
+							<ul>
+							<% _.forEach(s.keywords, function(k) { %>
+								<li><%= (k || "") %></li>
+							<% }) %>
+							</ul>
+						</li>
+						<% }) %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="references" class="row">
+				<aside class="col-sm-4">
+					<h3>References</h3>
+				</aside>
+				<div class="col-sm-8">
+					<% _.forEach(references, function(r) { %>
+						<blockquote>
+							<p><%= (r.reference || "") %></p>
+							<strong>— <%= (r.name || "") %></strong>
+						</blockquote>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	</body>
 </html>
