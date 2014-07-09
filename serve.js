@@ -3,6 +3,8 @@
 
 var http = require("http");
 var theme = require("./index.js");
+var schema = require("resume-schema");
+var resume = schema.resumeJson;
 
 var port = 8080;
 http.createServer(function(req, res) {	
@@ -14,5 +16,5 @@ console.log("Preview: http://localhost:8080/");
 console.log("Serving..");
 
 function resume() {
-	return theme.render({});
+	return theme.render(resume);
 }
