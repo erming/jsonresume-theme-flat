@@ -78,18 +78,24 @@
 		padding: 70px 0;
 	}
 	#content {
-		padding: 40px 0;
+		padding: 50px 0;
+	}
+	#content h4 {
+		margin-bottom: 4px;
 	}
 	#content aside {
 		padding-right: 20px;
 		text-align: right;
 	}
+	#content strong {
+		display: block;
+		margin-bottom: 10px;
+	}
 	#content .row + .row {
 		margin-top: 40px;
 	}
-	#content .position {
-		display: block;
-		margin-bottom: .5em;
+	#content .item + .item {
+		margin-top: 32px;
 	}
 	
 	@media (max-width: 768px) {
@@ -123,38 +129,42 @@
 	</header>
 	<div id="content">
 		<div class="container">
-			<div id="about" class="row">
+			<section id="about" class="row">
 				<aside class="col-sm-4">
 					<h3>About</h3>
 				</aside>
 				<div class="col-sm-8">
 					<p><%= (bio.summary || "") %></p>
 				</div>
-			</div>
-			<div id="work" class="row">
+			</section>
+			<section id="work" class="row">
 				<aside class="col-sm-4">
 					<h3>Work</h3>
 				</aside>
 				<div class="col-sm-8">
 				<% _.forEach(work, function(w) { %>
+				<div class="item">
 					<h4><%= (w.company || "") %></h4>
-					<strong class="position"><%= w.position %></strong>
+					<strong><%= w.position %></strong>
 					<p><%= (w.summary || "") %></p>
+				</div>
 				<% }) %>
 				</div>
-			</div>
-			<div id="education" class="row">
+			</section>
+			<section id="education" class="row">
 				<aside class="col-sm-4">
 					<h3>Education</h3>
 				</aside>
 				<div class="col-sm-8">
 				<% _.forEach(education, function(e) { %>
+				<div class="item">
 					<h4><%= (e.institution || "") %></h4>
-					<strong class="position"><%= (e.area || "") %>, <%= (e.studyType || "") %></strong>
+					<strong><%= (e.area || "") %>, <%= (e.studyType || "") %></strong>
+				</div>
 				<% }) %>
 				</div>
-			</div>
-			<div id="skills" class="row">
+			</section>
+			<section id="skills" class="row">
 				<aside class="col-sm-4">
 					<h3>Skills</h3>
 				</aside>
@@ -174,20 +184,20 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div id="references" class="row">
+			</section>
+			<section id="references" class="row">
 				<aside class="col-sm-4">
 					<h3>References</h3>
 				</aside>
 				<div class="col-sm-8">
 					<% _.forEach(references, function(r) { %>
-						<blockquote>
-							<p><%= (r.reference || "") %></p>
-							<strong>— <%= (r.name || "") %></strong>
-						</blockquote>
+					<blockquote>
+						<p><%= (r.reference || "") %></p>
+						<strong>— <%= (r.name || "") %></strong>
+					</blockquote>
 					<% }) %>
 				</div>
-			</div>
+			</section>
 		</div>
 	</div>
 	
