@@ -14,29 +14,31 @@
 	);
 	body {
 		font-family: Lato, sans-serif;
-		color: #2C3E50;
+		color: #2c3e50;
 		margin: 0;
 		margin-bottom: 80px;
 	}
 	a {
-		transition: opacity .2s;
+		color: #2ecc71;
 	}
+	a:focus,
 	a:hover {
+		color: #2ecc71;
 		text-decoration: none;
-		opacity: .8;
 	}
 	p {
 		line-height: 1.5;
+		margin: 0;
 		text-align: justify;
+	}
+	p + p {
+		margin-top: 10px;
 	}
 	h1,
 	h2,
 	h3,
 	h4 {
 		margin-top: 0;
-	}
-	h3 {
-		color: #f1c40f;
 	}
 	blockquote {
 		border-left: 5px solid #e7e9ec;
@@ -51,9 +53,8 @@
 		margin: 0;
 		padding: 0;
 	}
-	li ul li {
-		list-style: disc;
-		margin-left: 30px;
+	li ul {
+		margin-left: 15px;
 	}
 	.container {
 		max-width: 750px;
@@ -70,6 +71,9 @@
 		top: 0px;
 		word-spacing: 2px;
 	}
+	#wip:hover {
+		opacity: .8;
+	}
 	#wip .octicon {
 		margin-right: 8px;
 	}
@@ -77,8 +81,16 @@
 		background: #f4f6f6;
 		padding: 70px 0;
 	}
+	#header h2 {
+		font-size: 28px;
+		color: #95a5a6;
+	}
 	#content {
 		padding: 50px 0;
+	}
+	#content h3 {
+		margin-top: -3px;
+		color: #f1c40f;
 	}
 	#content h4 {
 		margin-bottom: 4px;
@@ -89,13 +101,56 @@
 	}
 	#content strong {
 		display: block;
-		margin-bottom: 10px;
 	}
 	#content .row + .row {
 		margin-top: 40px;
 	}
+	#content .item {
+		overflow: hidden;
+	}
 	#content .item + .item {
 		margin-top: 32px;
+	}
+	#contact li:first-child {
+		font-weight: bold;
+	}
+	#work h4 {
+		border-top: 1px solid #f4f6f6;
+		height: 20px;
+		margin-top: 12px;
+		margin-bottom: -2px;
+		position: relative;
+	}
+	#work h4 span,
+	#work h4 a {
+		background: #fff;
+		position: absolute;
+	}
+	#work h4 span {
+		padding-right: 20px;
+		margin-top: -12px;
+	}
+	#work h4 a {
+		font-size: 14px;
+		margin-top: -10px;
+		padding-left: 20px;
+		right: 0;
+	}
+	#work strong {
+		margin-bottom: 10px;
+	}
+	#skills h4 {
+		margin-bottom: 4px;
+	}
+	#skills li {
+		line-height: 1.8;
+	}
+	#skills li li:before {
+		content: "\f052";
+		float: left;
+		font: 13px Octicons;
+		opacity: .1;
+		margin: 6px 15px 0 0;
 	}
 	
 	@media (max-width: 768px) {
@@ -105,6 +160,9 @@
 		#content aside {
 			padding-right: 0;
 			text-align: left;
+		}
+		#contact ul + ul {
+			margin-top: 1em;
 		}
 	}
 	</style>
@@ -137,6 +195,27 @@
 					<p>{{bio.summary}}</p>
 				</div>
 			</section>
+			<section id="contact" class="row">
+				<aside class="col-sm-4">
+					<h3>Contact</h3>
+				</aside>
+				<div class="col-sm-8">
+					<div class="row">
+					{{#bio.email}}
+					<ul class="col-sm-6">
+						<li>Email</li>
+						<li>{{bio.email.personal}}</li>
+					</ul>
+					{{/bio.email}}
+					{{#bio.phone}}
+					<ul class="col-sm-6">
+						<li>Phone</li>
+						<li>{{bio.phone.personal}}</li>
+					</ul>
+					{{/bio.phone}}
+					</div>
+				</div>
+			</section>
 			{{#work.length}}
 			<section id="work" class="row">
 				<aside class="col-sm-4">
@@ -145,7 +224,10 @@
 				<div class="col-sm-8">
 				{{#work}}
 				<div class="item">
-					<h4>{{company}}</h4>
+					<h4>
+						<span>{{company}}</span>
+						<a href="{{website}}">{{website}}</a>
+					</h4>
 					<strong>{{position}}</strong>
 					<p>{{summary}}</p>
 				</div>
@@ -200,7 +282,7 @@
 					{{#references}}
 					<blockquote>
 						<p>{{reference}}</p>
-						<strong>— {{name}}</strong>
+						<p><strong>— {{name}}</strong></p>
 					</blockquote>
 					{{/references}}
 				</div>

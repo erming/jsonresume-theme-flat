@@ -1,9 +1,11 @@
 //
-// This script will run a local development server. This is useful when
-// developing the theme.
+// Run a local theme development server.
 //
 // Usage:
 // `node serve`
+//
+// By Mattias Erming
+// http://github.com/erming
 //
 
 var http = require("http");
@@ -23,7 +25,7 @@ function render() {
 	try {
 		return theme.render(resume);
 	} catch(e) {
-		console.log(e.message);
+		console.log("Error: " + e.message);
 		return "";
 	}
 }

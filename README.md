@@ -12,8 +12,8 @@ Here's a list of things:
 
 - [ ] Bio
   - [x] Name
-  - [ ] Email
-  - [ ] Phone
+  - [x] Email
+  - [x] Phone
   - [x] Summary
   - [x] Location
   - [ ] Websites
@@ -22,7 +22,7 @@ Here's a list of things:
   - [ ] Date
   - [x] Position
   - [x] Company
-  - [ ] Website
+  - [x] Website
   - [x] Summary
   - [ ] Highlights
 - [x] Education
