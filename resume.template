@@ -114,8 +114,8 @@
 	#content .item + .item {
 		margin-top: 32px;
 	}
-	#social li:first-child,
-	#contact li:first-child {
+	#contact li:first-child,
+	#social li:first-child {
 		font-weight: bold;
 	}
 	#work h4 {
@@ -173,7 +173,8 @@
 			padding-right: 0;
 			text-align: left;
 		}
-		#contact ul + ul {
+		#contact ul + ul,
+		#social ul + ul {
 			margin-top: 1em;
 		}
 	}
