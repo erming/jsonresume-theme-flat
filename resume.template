@@ -114,6 +114,7 @@
 	#content .item + .item {
 		margin-top: 32px;
 	}
+	#social li:first-child,
 	#contact li:first-child {
 		font-weight: bold;
 	}
@@ -162,7 +163,7 @@
 			margin-left: -78px;
 			position: absolute;
 			right: inherit;
-			width: 156px;
+			width: 160px;
 		}
 		#header {
 			text-align: center;
@@ -299,6 +300,29 @@
 				</div>
 			</section>
 			{{/references.length}}
+			{{#bio.profiles}}
+			<section id="social" class="row">
+				<aside class="col-sm-4">
+					<h3>Social</h3>
+				</aside>
+				<div class="col-sm-8">
+					<div class="row">
+					{{#bio.profiles.github}}
+					<ul class="col-sm-6">
+						<li>GitHub</li>
+						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
+					</ul>
+					{{/bio.profiles.github}}
+					{{#bio.profiles.twitter}}
+					<ul class="col-sm-6">
+						<li>Twitter</li>
+						<li><a href="http://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a></li>
+					</ul>
+					{{/bio.profiles.twitter}}
+					</div>
+				</div>
+			</section>
+			{{/bio.profiles}}
 		</div>
 	</div>
 	
