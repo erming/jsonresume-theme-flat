@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+
 	<title>{{bio.firstName}} {{bio.lastName}}</title>
-	
+
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-	
+
 	<style>
 	@import url(
 		http://fonts.googleapis.com/css?family=Lato:400,700
@@ -164,7 +164,7 @@
 		opacity: .1;
 		margin: 6px 15px 0 0;
 	}
-	
+
 	@media (max-width: 768px) {
 		#wip {
 			top: 0;
@@ -187,10 +187,10 @@
 		}
 	}
 	</style>
-	
+
 	</head>
 	<body>
-	
+
 	<header id="header">
 		<div class="container">
 			<a href="https://github.com/erming/jsonresume-theme-flat" id="wip">
@@ -282,7 +282,7 @@
 				<div class="col-sm-8">
 				{{#education}}
 				<div class="item">
-					<h4>{{institution}} <span class="date-range">{{startDate}} to {{endDate}}</span></h4>
+					<h4>{{institution}} <span class="date-range">{{date startDate}} — {{date endDate}}</span></h4>
 					<strong>{{area}}, {{studyType}}</strong>
 				</div>
 				{{/education}}
@@ -329,6 +329,6 @@
 			{{/if}}
 		</div>
 	</div>
-	
+
 	</body>
 </html>

@@ -1,5 +1,5 @@
 var fs = require("fs");
-var handlebars = require("handlebars");
+var Handlebars = require("handlebars");
 
 module.exports = {
 	render: function(resume) {
@@ -10,6 +10,15 @@ module.exports = {
 var Theme = {
 	render: function(data) {
 		var tpl = fs.readFileSync(__dirname + "/resume.template").toString();
-		return handlebars.compile(tpl)(data);
+		return Handlebars.compile(tpl)(data);
 	}
 };
+
+Handlebars.registerHelper("date", function(value) {
+	var date = value.toString();
+	if (!date) {
+		return "Present";
+	} else {
+		return date.substr(0, 4);
+	}
+});
