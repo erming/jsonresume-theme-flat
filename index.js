@@ -15,7 +15,7 @@ var Theme = {
 };
 
 Handlebars.registerHelper("date", function(value) {
-	var date = value.toString();
+	var date = (value || "").toString();
 	if (!date) {
 		return "Present";
 	} else {

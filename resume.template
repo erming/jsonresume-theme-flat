@@ -63,6 +63,28 @@
 		max-width: 750px;
 		padding: 0 30px;
 	}
+	.strike-through {
+		border-top: 1px solid #f4f6f6;
+		height: 20px;
+		margin-top: 12px;
+		margin-bottom: -2px;
+		position: relative;
+	}
+	.strike-through span,
+	.strike-through a {
+		background: #fff;
+		position: absolute;
+	}
+	.strike-through span:first-child {
+		padding-right: 20px;
+		margin-top: -12px;
+	}
+	.strike-through span + span {
+		font-size: 14px;
+		margin-top: -10px;
+		padding-left: 20px;
+		right: 0;
+	}
 	#wip {
 		background: #f1c40f;
 		color: #fff;
@@ -96,7 +118,7 @@
 		color: #f1c40f;
 	}
 	#content h4 {
-		margin-bottom: 4px;
+		margin-bottom: 0px;
 	}
 	#content h4 .date-range {
 		font-size: 14px;
@@ -126,30 +148,16 @@
 	#social li:first-child {
 		font-weight: bold;
 	}
-	#work h4 {
-		border-top: 1px solid #f4f6f6;
-		height: 20px;
-		margin-top: 12px;
-		margin-bottom: -2px;
-		position: relative;
+	#work .link {
+		float: right;
 	}
-	#work h4 span,
-	#work h4 a {
-		background: #fff;
-		position: absolute;
-	}
-	#work h4 span {
-		padding-right: 20px;
-		margin-top: -12px;
-	}
-	#work h4 a {
-		font-size: 14px;
-		margin-top: -10px;
-		padding-left: 20px;
-		right: 0;
-	}
-	#work strong {
+	#work .position {
 		margin-bottom: 10px;
+	}
+	#education .course:before {
+		content: "\f0d7";
+		font: 16px Octicons;
+		margin-right: 6px;
 	}
 	#skills h4 {
 		margin-bottom: 4px;
@@ -263,11 +271,12 @@
 				<div class="col-sm-8">
 				{{#work}}
 				<div class="item">
-					<h4>
+					<h4 class="strike-through">
 						<span>{{company}}</span>
-						<a href="{{website}}">{{website}}</a>
+						<span class="date">{{date startDate}} — {{date endDate}}</span>
 					</h4>
-					<strong>{{position}}</strong>
+					<a class="link" href="{{website}}">{{website}}</a>
+					<strong class="position">{{position}}</strong>
 					<p>{{summary}}</p>
 				</div>
 				{{/work}}
@@ -282,8 +291,13 @@
 				<div class="col-sm-8">
 				{{#education}}
 				<div class="item">
-					<h4>{{institution}} <span class="date-range">{{date startDate}} — {{date endDate}}</span></h4>
-					<strong>{{area}}, {{studyType}}</strong>
+					<h4 class="strike-through">
+						<span>{{institution}}</span>
+						<span class="date">{{date startDate}} — {{date endDate}}</span>
+					</h4>
+					<strong class="course">
+						{{area}}, {{studyType}}
+					</strong>
 				</div>
 				{{/education}}
 				</div>
