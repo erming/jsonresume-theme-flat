@@ -1,7 +1,7 @@
 {
   "name": "jsonresume-theme-flat",
-  "version": "0.1.13",
-  "description": "",
+  "version": "0.1.14",
+  "description": "A theme for jsonresume.org",
   "author": "Mattias Erming",
   "repository": {
     "type": "git",
