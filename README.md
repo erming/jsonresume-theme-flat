@@ -18,13 +18,13 @@ Here's a list of things:
   - [x] Location
   - [x] Websites
   - [x] Profiles
-- [ ] Work
+- [x] Work
   - [x] Date
   - [x] Position
   - [x] Company
   - [x] Website
   - [x] Summary
-  - [ ] Highlights
+  - [x] Highlights
 - [x] Education
   - [x] Institution
   - [x] Date

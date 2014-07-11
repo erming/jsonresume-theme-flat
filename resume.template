@@ -154,6 +154,21 @@
 	#work .position {
 		margin-bottom: 10px;
 	}
+	#work .highlights {
+		margin-top: 20px;
+	}
+	#work .highlights h4 {
+		margin-bottom: 5px;
+	}
+	#work .highlights li {
+		padding-left: 30px;
+		text-align: justify;
+	}
+	#work .highlights li:before {
+		margin-top: 5px;
+		margin-left: -20px;
+		position: absolute;
+	}
 	#education .course:before {
 		content: "\f0d7";
 		font: 16px Octicons;
@@ -165,7 +180,8 @@
 	#skills li {
 		line-height: 1.8;
 	}
-	#skills li li:before {
+	#work li:before,
+	#skills .skill li:before {
 		content: "\f052";
 		float: left;
 		font: 13px Octicons;
@@ -206,8 +222,8 @@
 				Work in progress
 			</a>
 			<div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-8">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
 					<h1>{{bio.firstName}} {{bio.lastName}}</h1>
 					<h2>{{bio.location.city}}</h2>
 				</div>
@@ -217,18 +233,18 @@
 	<div id="content">
 		<div class="container">
 			<section id="about" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>About</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 					<p>{{bio.summary}}</p>
 				</div>
 			</section>
 			<section id="contact" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>Contact</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 					<div class="row">
 					{{#if bio.email}}
 					<ul class="col-sm-6">
@@ -265,10 +281,10 @@
 			</section>
 			{{#if work.length}}
 			<section id="work" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>Work</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 				{{#work}}
 				<div class="item">
 					<h4 class="strike-through">
@@ -278,6 +294,16 @@
 					<a class="link" href="{{website}}">{{website}}</a>
 					<strong class="position">{{position}}</strong>
 					<p>{{summary}}</p>
+					{{#if highlights.length}}
+					<div class="highlights">
+						<h4>Highlights</h4>
+						<ul>
+						{{#highlights}}
+							<li>{{.}}</li>
+						{{/highlights}}
+						</ul>
+					</div>
+					{{/if}}
 				</div>
 				{{/work}}
 				</div>
@@ -285,10 +311,10 @@
 			{{/if}}
 			{{#if education.length}}
 			<section id="education" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>Education</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 				{{#education}}
 				<div class="item">
 					<h4 class="strike-through">
@@ -305,14 +331,14 @@
 			{{/if}}
 			{{#if skills.length}}
 			<section id="skills" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>Skills</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 					<div class="row">
 						<ul>
 						{{#skills}}
-						<li class="col-xs-6">
+						<li class="col-xs-6 skill">
 							<h4>{{name}}</h4>
 							<ul>
 							{{#keywords}}
@@ -328,10 +354,10 @@
 			{{/if}}
 			{{#if references.length}}
 			<section id="references" class="row">
-				<aside class="col-sm-4">
+				<aside class="col-sm-3">
 					<h3>References</h3>
 				</aside>
-				<div class="col-sm-8">
+				<div class="col-sm-9">
 					{{#references}}
 					<blockquote>
 						<p>{{reference}}</p>
