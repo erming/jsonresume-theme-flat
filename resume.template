@@ -56,8 +56,11 @@
 		margin: 0;
 		padding: 0;
 	}
-	li ul {
+	.list {
 		margin-left: 15px;
+	}
+	.list li {
+		line-height: 1.8;
 	}
 	.container {
 		max-width: 750px;
@@ -84,6 +87,13 @@
 		margin-top: -10px;
 		padding-left: 20px;
 		right: 0;
+	}
+	.bullet:before {
+		content: "\f052";
+		float: left;
+		font: 13px Octicons;
+		opacity: .1;
+		margin: 6px 15px 0 0;
 	}
 	#wip {
 		background: #f1c40f;
@@ -161,7 +171,7 @@
 		margin-bottom: 5px;
 	}
 	#work .highlights li {
-		padding-left: 30px;
+		padding-left: 36px;
 		text-align: justify;
 	}
 	#work .highlights li:before {
@@ -169,24 +179,19 @@
 		margin-left: -20px;
 		position: absolute;
 	}
-	#education .course:before {
+	#education .area:before {
 		content: "\f0d7";
 		font: 16px Octicons;
 		margin-right: 6px;
 	}
+	#education .courses {
+		margin-top: 20px;
+	}
+	#education .courses h4 {
+		margin-bottom: 5px;
+	}
 	#skills h4 {
 		margin-bottom: 4px;
-	}
-	#skills li {
-		line-height: 1.8;
-	}
-	#work li:before,
-	#skills .skill li:before {
-		content: "\f052";
-		float: left;
-		font: 13px Octicons;
-		opacity: .1;
-		margin: 6px 15px 0 0;
 	}
 
 	@media (max-width: 768px) {
@@ -299,7 +304,7 @@
 						<h4>Highlights</h4>
 						<ul>
 						{{#highlights}}
-							<li>{{.}}</li>
+							<li class="bullet">{{.}}</li>
 						{{/highlights}}
 						</ul>
 					</div>
@@ -321,9 +326,19 @@
 						<span>{{institution}}</span>
 						<span class="date">{{date startDate}} — {{date endDate}}</span>
 					</h4>
-					<strong class="course">
+					<strong class="area">
 						{{area}}, {{studyType}}
 					</strong>
+					{{#if courses.length}}
+					<div class="courses">
+						<h4>Courses</h4>
+						<ul class="list">
+						{{#courses}}
+							<li class="bullet">{{.}}</li>
+						{{/courses}}
+						</ul>
+					</div>
+					{{/if}}
 				</div>
 				{{/education}}
 				</div>
@@ -340,9 +355,9 @@
 						{{#skills}}
 						<li class="col-xs-6 skill">
 							<h4>{{name}}</h4>
-							<ul>
+							<ul class="list">
 							{{#keywords}}
-								<li>{{.}}</li>
+								<li class="bullet">{{.}}</li>
 							{{/keywords}}
 							</ul>
 						</li>

@@ -40,9 +40,8 @@ Here's a list of things:
   - [ ] Publisher
   - [ ] Date
   - [ ] Website
-- [ ] Skills
+- [x] Skills
   - [x] Name
-  - [ ] Level
   - [x] Keywords
 - [x] References
   - [x] Name
