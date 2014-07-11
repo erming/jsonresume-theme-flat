@@ -27,7 +27,7 @@ Here's a list of things:
   - [ ] Highlights
 - [x] Education
   - [x] Institution
-  - [ ] Date
+  - [x] Date
   - [ ] Area
   - [x] Type
   - [ ] Courses
