@@ -110,8 +110,11 @@
 	#content strong {
 		display: block;
 	}
+	#content [class*='col-sm-'] {
+		margin-bottom: 10px;
+	}
 	#content .row + .row {
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 	#content .item {
 		overflow: hidden;
@@ -231,6 +234,24 @@
 						<li>{{bio.phone.personal}}</li>
 					</ul>
 					{{/bio.phone}}
+					{{#bio.profiles.github}}
+					<ul class="col-sm-6">
+						<li>GitHub</li>
+						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
+					</ul>
+					{{/bio.profiles.github}}
+					{{#bio.websites}}
+					<ul class="col-sm-6">
+						<li>Blog</li>
+						<li><a href="{{bio.websites.blog}}">{{bio.websites.blog}}</a></li>
+					</ul>
+					{{/bio.websites}}
+					{{#bio.profiles.twitter}}
+					<ul class="col-sm-6">
+						<li>Twitter</li>
+						<li><a href="http://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a></li>
+					</ul>
+					{{/bio.profiles.twitter}}
 					</div>
 				</div>
 			</section>
@@ -306,29 +327,6 @@
 				</div>
 			</section>
 			{{/references.length}}
-			{{#bio.profiles}}
-			<section id="social" class="row">
-				<aside class="col-sm-4">
-					<h3>Social</h3>
-				</aside>
-				<div class="col-sm-8">
-					<div class="row">
-					{{#bio.profiles.github}}
-					<ul class="col-sm-6">
-						<li>GitHub</li>
-						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
-					</ul>
-					{{/bio.profiles.github}}
-					{{#bio.profiles.twitter}}
-					<ul class="col-sm-6">
-						<li>Twitter</li>
-						<li><a href="http://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a></li>
-					</ul>
-					{{/bio.profiles.twitter}}
-					</div>
-				</div>
-			</section>
-			{{/bio.profiles}}
 		</div>
 	</div>
 	

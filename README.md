@@ -10,14 +10,14 @@ The theme can be previewed at http://themes.jsonresume.org/theme/flat
 
 Here's a list of things:
 
-- [ ] Bio
+- [x] Bio
   - [x] Name
   - [x] Email
   - [x] Phone
   - [x] Summary
   - [x] Location
-  - [ ] Websites
-  - [ ] Profiles
+  - [x] Websites
+  - [x] Profiles
 - [ ] Work
   - [ ] Date
   - [x] Position
