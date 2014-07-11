@@ -11,8 +11,8 @@
     "start": "node serve"
   },
   "dependencies": {
-    "mustache": "~0.8.2",
-    "resume-schema": "0.0.11"
+    "handlebars": "^2.0.0-alpha.4",
+    "resume-schema": "^0.0.11"
   },
   "license": "MIT"
 }

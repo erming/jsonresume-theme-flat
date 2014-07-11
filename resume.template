@@ -222,40 +222,40 @@
 				</aside>
 				<div class="col-sm-8">
 					<div class="row">
-					{{#bio.email}}
+					{{#if bio.email}}
 					<ul class="col-sm-6">
 						<li>Email</li>
 						<li>{{bio.email.personal}}</li>
 					</ul>
-					{{/bio.email}}
-					{{#bio.phone}}
+					{{/if}}
+					{{#if bio.phone}}
 					<ul class="col-sm-6">
 						<li>Phone</li>
 						<li>{{bio.phone.personal}}</li>
 					</ul>
-					{{/bio.phone}}
-					{{#bio.profiles.github}}
+					{{/if}}
+					{{#if bio.profiles.github}}
 					<ul class="col-sm-6">
 						<li>GitHub</li>
 						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
 					</ul>
-					{{/bio.profiles.github}}
-					{{#bio.websites}}
+					{{/if}}
+					{{#if bio.websites}}
 					<ul class="col-sm-6">
 						<li>Blog</li>
 						<li><a href="{{bio.websites.blog}}">{{bio.websites.blog}}</a></li>
 					</ul>
-					{{/bio.websites}}
-					{{#bio.profiles.twitter}}
+					{{/if}}
+					{{#if bio.profiles.twitter}}
 					<ul class="col-sm-6">
 						<li>Twitter</li>
 						<li><a href="http://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a></li>
 					</ul>
-					{{/bio.profiles.twitter}}
+					{{/if}}
 					</div>
 				</div>
 			</section>
-			{{#work.length}}
+			{{#if work.length}}
 			<section id="work" class="row">
 				<aside class="col-sm-4">
 					<h3>Work</h3>
@@ -273,8 +273,8 @@
 				{{/work}}
 				</div>
 			</section>
-			{{/work.length}}
-			{{#education.length}}
+			{{/if}}
+			{{#if education.length}}
 			<section id="education" class="row">
 				<aside class="col-sm-4">
 					<h3>Education</h3>
@@ -288,8 +288,8 @@
 				{{/education}}
 				</div>
 			</section>
-			{{/education.length}}
-			{{#skills.length}}
+			{{/if}}
+			{{#if skills.length}}
 			<section id="skills" class="row">
 				<aside class="col-sm-4">
 					<h3>Skills</h3>
@@ -311,8 +311,8 @@
 					</div>
 				</div>
 			</section>
-			{{/skills.length}}
-			{{#references.length}}
+			{{/if}}
+			{{#if references.length}}
 			<section id="references" class="row">
 				<aside class="col-sm-4">
 					<h3>References</h3>
@@ -326,7 +326,7 @@
 					{{/references}}
 				</div>
 			</section>
-			{{/references.length}}
+			{{/if}}
 		</div>
 	</div>
 	

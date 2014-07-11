@@ -1,11 +1,15 @@
 var fs = require("fs");
-var mustache = require("mustache");
-
-const FILEPATH = __dirname + "/resume.template";
+var handlebars = require("handlebars");
 
 module.exports = {
 	render: function(resume) {
-		var tpl = fs.readFileSync(FILEPATH).toString();
-		return mustache.render(tpl, resume);
+		return Theme.render(resume);
+	}
+};
+
+var Theme = {
+	render: function(data) {
+		var tpl = fs.readFileSync(__dirname + "/resume.template").toString();
+		return handlebars.compile(tpl)(data);
 	}
 };
