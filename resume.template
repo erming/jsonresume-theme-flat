@@ -246,13 +246,13 @@
 				</aside>
 				<div class="col-sm-9">
 					<div class="row">
-					{{#if bio.email}}
+					{{#if bio.email.personal}}
 					<ul class="col-sm-6">
 						<li>Email</li>
 						<li>{{bio.email.personal}}</li>
 					</ul>
 					{{/if}}
-					{{#if bio.phone}}
+					{{#if bio.phone.personal}}
 					<ul class="col-sm-6">
 						<li>Phone</li>
 						<li>{{bio.phone.personal}}</li>
@@ -264,7 +264,7 @@
 						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
 					</ul>
 					{{/if}}
-					{{#if bio.websites}}
+					{{#if bio.websites.blog}}
 					<ul class="col-sm-6">
 						<li>Blog</li>
 						<li><a href="{{bio.websites.blog}}">{{bio.websites.blog}}</a></li>
