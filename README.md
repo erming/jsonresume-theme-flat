@@ -19,7 +19,7 @@ Here's a list of things:
   - [x] Websites
   - [x] Profiles
 - [ ] Work
-  - [ ] Date
+  - [x] Date
   - [x] Position
   - [x] Company
   - [x] Website
@@ -28,7 +28,7 @@ Here's a list of things:
 - [x] Education
   - [x] Institution
   - [x] Date
-  - [ ] Area
+  - [x] Area
   - [x] Type
   - [ ] Courses
 - [ ] Awards
