@@ -190,11 +190,12 @@
 	#education .courses h4 {
 		margin-bottom: 5px;
 	}
-	#awards .awarder:before {
-		content: "\f07b";
-		font: 16px Octicons;
-		margin-right: 6px;
+	#awards em {
+		color: #95a5a6;
+		font-weight: normal;
+		font-style: normal;
 	}
+
 	#skills h4 {
 		margin-bottom: 4px;
 	}
@@ -299,7 +300,7 @@
 				<div class="item">
 					<h4 class="strike-through">
 						<span>{{company}}</span>
-						<span class="date">{{date startDate}} — {{date endDate}}</span>
+						<span class="date">{{formatDate startDate}} — {{formatDate endDate}}</span>
 					</h4>
 					<a class="link" href="{{website}}">{{website}}</a>
 					<strong class="position">{{position}}</strong>
@@ -329,7 +330,7 @@
 				<div class="item">
 					<h4 class="strike-through">
 						<span>{{institution}}</span>
-						<span class="date">{{date startDate}} — {{date endDate}}</span>
+						<span class="date">{{formatDate startDate}} — {{formatDate endDate}}</span>
 					</h4>
 					<strong class="area">
 						{{area}}, {{studyType}}
@@ -359,11 +360,18 @@
 				<div class="item">
 					<h4 class="strike-through">
 						<span>{{title}}</span>
-						<span class="date">{{date date}}</span>
 					</h4>
-					<strong class="awarder">
-						{{awarder}}
+					{{#if date}}
+					<span class="pull-right">
+						<em>Awarded</em> 17 july, 2014 <!-- Temporary -->
+					</span>
+					{{/if}}
+					{{#if awarder}}
+					<strong>
+						<em>by</em> {{awarder}}
 					</strong>
+					{{/if}}
+
 				</div>
 				{{/awards}}
 				</div>
