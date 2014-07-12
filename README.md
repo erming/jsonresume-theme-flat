@@ -31,10 +31,10 @@ Here's a list of things:
   - [x] Area
   - [x] Type
   - [ ] Courses
-- [ ] Awards
-  - [ ] Title
-  - [ ] Date
-  - [ ] Awarder
+- [x] Awards
+  - [x] Title
+  - [x] Date
+  - [x] Awarder
 - [ ] Publications
   - [ ] Name
   - [ ] Publisher
