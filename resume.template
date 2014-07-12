@@ -377,6 +377,34 @@
 				</div>
 			</section>
 			{{/if}}
+			{{#if publications.length}}
+			<section id="awards" class="row">
+				<aside class="col-sm-3">
+					<h3>Publications</h3>
+				</aside>
+				<div class="col-sm-9">
+				{{#publications}}
+				<div class="item">
+					<h4 class="strike-through">
+						<span>{{name}}</span>
+						<span class="date">{{formatDate releaseDate}}</span>
+					</h4>
+					{{#if website}}
+					<span class="pull-right">
+						<a class="link" href="{{website}}">{{website}}</a>
+					</span>
+					{{/if}}
+					{{#if publisher}}
+					<span>
+						<em>Published by</em> {{publisher}}
+					</span>
+					{{/if}}
+
+				</div>
+				{{/publications}}
+				</div>
+			</section>
+			{{/if}}
 			{{#if skills.length}}
 			<section id="skills" class="row">
 				<aside class="col-sm-3">
