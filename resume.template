@@ -190,12 +190,11 @@
 	#education .courses h4 {
 		margin-bottom: 5px;
 	}
-	#awards em {
+	#awards em, #publications em {
 		color: #95a5a6;
 		font-weight: normal;
 		font-style: normal;
 	}
-
 	#skills h4 {
 		margin-bottom: 4px;
 	}
@@ -395,9 +394,9 @@
 					</span>
 					{{/if}}
 					{{#if publisher}}
-					<span>
+					<strong>
 						<em>Published by</em> {{publisher}}
-					</span>
+					</strong>
 					{{/if}}
 
 				</div>
