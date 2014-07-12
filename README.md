@@ -30,7 +30,7 @@ Here's a list of things:
   - [x] Date
   - [x] Area
   - [x] Type
-  - [ ] Courses
+  - [x] Courses
 - [x] Awards
   - [x] Title
   - [x] Date
