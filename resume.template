@@ -378,7 +378,7 @@
 			</section>
 			{{/if}}
 			{{#if publications.length}}
-			<section id="awards" class="row">
+			<section id="publications" class="row">
 				<aside class="col-sm-3">
 					<h3>Publications</h3>
 				</aside>
