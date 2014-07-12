@@ -190,6 +190,11 @@
 	#education .courses h4 {
 		margin-bottom: 5px;
 	}
+	#awards .awarder:before {
+		content: "\f07b";
+		font: 16px Octicons;
+		margin-right: 6px;
+	}
 	#skills h4 {
 		margin-bottom: 4px;
 	}
@@ -341,6 +346,26 @@
 					{{/if}}
 				</div>
 				{{/education}}
+				</div>
+			</section>
+			{{/if}}
+			{{#if awards.length}}
+			<section id="awards" class="row">
+				<aside class="col-sm-3">
+					<h3>Awards</h3>
+				</aside>
+				<div class="col-sm-9">
+				{{#awards}}
+				<div class="item">
+					<h4 class="strike-through">
+						<span>{{title}}</span>
+						<span class="date">{{date date}}</span>
+					</h4>
+					<strong class="awarder">
+						{{awarder}}
+					</strong>
+				</div>
+				{{/awards}}
 				</div>
 			</section>
 			{{/if}}
