@@ -35,11 +35,11 @@ Here's a list of things:
   - [x] Title
   - [x] Date
   - [x] Awarder
-- [ ] Publications
-  - [ ] Name
-  - [ ] Publisher
-  - [ ] Date
-  - [ ] Website
+- [x] Publications
+  - [x] Name
+  - [x] Publisher
+  - [x] Date
+  - [x] Website
 - [x] Skills
   - [x] Name
   - [x] Keywords
