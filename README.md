@@ -47,13 +47,22 @@ Here's a list of things:
   - [x] Name
   - [x] Reference
 
+And as of 2014-07-14:
+
+- [ ] Avatar
+- [ ] Print stylesheet
+- [ ] PDF export
+
 ### Development
 
-If you want to roll up your sleeves and get to work, here's what you have to do:
+Run this in your terminal:
 
-1. Clone the repo with `git clone http://github.com/erming/jsonresume-theme-flat`
-2. Enter folder `cd jsonresume-theme-flat/`
-3. Run `npm install`
-4. Run the development server with `npm start`
-5. Open your web browser and go to `http://localhost:8080/`
-6. Start editing `resume.template`
+```bash
+git clone http://github.com/erming/jsonresume-theme-flat
+cd jsonresume-theme-flat/
+sudo npm install
+npm start
+
+# Open 'http://localhost:8080'
+# You can now start editing 'resume.template'
+```
