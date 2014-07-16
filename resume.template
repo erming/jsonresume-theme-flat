@@ -8,8 +8,8 @@
 
 	<title>{{bio.firstName}} {{bio.lastName}}</title>
 
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
 
 	<style>
 	@import url(
@@ -190,7 +190,8 @@
 	#education .courses h4 {
 		margin-bottom: 5px;
 	}
-	#awards em, #publications em {
+	#awards em,
+	#publications em {
 		color: #95a5a6;
 		font-weight: normal;
 		font-style: normal;
