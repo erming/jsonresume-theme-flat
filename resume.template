@@ -248,7 +248,7 @@
 					<h3>About</h3>
 				</aside>
 				<div class="col-sm-9">
-					<p>{{bio.summary}}</p>
+					<p>{{{nl2br bio.summary}}}</p>
 				</div>
 			</section>
 			<section id="contact" class="row">
@@ -304,7 +304,7 @@
 					</h4>
 					<a class="link" href="{{website}}">{{website}}</a>
 					<strong class="position">{{position}}</strong>
-					<p>{{summary}}</p>
+					<p>{{{nl2br summary}}}</p>
 					{{#if highlights.length}}
 					<div class="highlights">
 						<h4>Highlights</h4>
@@ -436,7 +436,7 @@
 				<div class="col-sm-9">
 					{{#references}}
 					<blockquote>
-						<p>{{reference}}</p>
+						<p>{{{nl2br reference}}}</p>
 						<p><strong>— {{name}}</strong></p>
 					</blockquote>
 					{{/references}}

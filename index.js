@@ -22,3 +22,7 @@ Handlebars.registerHelper("formatDate", function(value) {
 		return date.substr(0, 4);
 	}
 });
+
+Handlebars.registerHelper("nl2br", function(value) {
+	return value.replace(/\n/g, "</p><p>");
+});
