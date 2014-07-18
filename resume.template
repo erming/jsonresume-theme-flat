@@ -66,28 +66,6 @@
 		max-width: 750px;
 		padding: 0 30px;
 	}
-	.strike-through {
-		border-top: 1px solid #f4f6f6;
-		height: 20px;
-		margin-top: 12px;
-		margin-bottom: -2px;
-		position: relative;
-	}
-	.strike-through span,
-	.strike-through a {
-		background: #fff;
-		position: absolute;
-	}
-	.strike-through span:first-child {
-		padding-right: 20px;
-		margin-top: -12px;
-	}
-	.strike-through span + span {
-		font-size: 14px;
-		margin-top: -10px;
-		padding-left: 20px;
-		right: 0;
-	}
 	.bullet:before {
 		content: "\f052";
 		float: left;
@@ -196,21 +174,52 @@
 		font-weight: normal;
 		font-style: normal;
 	}
+	#publications .link:before {
+		content: attr(href);
+	}
 	#skills h4 {
 		margin-bottom: 4px;
 	}
 
+	@media (min-width: 480px) {
+		.strike-through {
+			border-top: 1px solid #f4f6f6;
+			height: 20px;
+			margin-top: 12px;
+			margin-bottom: -2px;
+			position: relative;
+		}
+		.strike-through span,
+		.strike-through a {
+			background: #fff;
+			position: absolute;
+		}
+		.strike-through span:first-child {
+			padding-right: 20px;
+			margin-top: -12px;
+		}
+		.strike-through span + span {
+			font-size: 14px;
+			margin-top: -10px;
+			padding-left: 20px;
+			right: 0;
+		}
+	}
 	@media (max-width: 768px) {
 		#wip {
-			top: 0;
-			margin-left: -78px;
-			position: absolute;
-			right: inherit;
-			width: 160px;
+			display: none;
 		}
 		#header {
-			text-align: center;
-			padding: 70px 0 50px;
+			padding: 50px 0 40px;
+		}
+		#header h1 {
+			font-size: 28px;
+		}
+		#header h2 {
+			font-size: 24px;
+		}
+		#content {
+			padding: 40px 0;
 		}
 		#content aside {
 			padding-right: 0;
@@ -219,6 +228,24 @@
 		#contact ul + ul,
 		#social ul + ul {
 			margin-top: 1em;
+		}
+	}
+	@media (max-width: 480px) {
+		.date {
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+		.strike-through span:first-child {
+			margin-bottom: 7px;
+		}
+		.strike-through span {
+			display: block;
+		}
+		#header {
+			padding: 40px 0 30px;
+		}
+		#publications .link:before {
+			content: "View publication";
 		}
 	}
 	</style>
@@ -391,7 +418,7 @@
 					</h4>
 					{{#if website}}
 					<span class="pull-right">
-						<a class="link" href="{{website}}">{{website}}</a>
+						<a class="link" href="{{website}}"></a>
 					</span>
 					{{/if}}
 					{{#if publisher}}
