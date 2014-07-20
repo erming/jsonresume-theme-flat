@@ -9,7 +9,6 @@
 //
 
 var http = require("http");
-var indicator = require("indicator");
 var resume = require("resume-schema").resumeJson;
 var theme = require("./index.js");
 
@@ -19,8 +18,8 @@ http.createServer(function(req, res) {
 	res.end(render());
 }).listen(port);
 
+console.log("Serving theme");
 console.log("Preview: http://localhost:8080/");
-indicator.start("Serving..");
 
 function render() {
 	try {
