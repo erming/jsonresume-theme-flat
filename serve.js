@@ -1,6 +1,11 @@
 //
 // Run a local theme development server.
 //
+// When running this script, it will load the local `index.js` file
+// and then try to call `index.render()`.
+//
+// Don't forget to install `resume-schema` via npm.
+//
 // Usage:
 // `node serve`
 //
