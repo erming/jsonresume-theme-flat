@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
 	
 	<style type="text/css">
-	{{css~}}
+	{{{css}}}
 	</style>
 	
 	</head>
@@ -43,7 +43,7 @@
 	{{#resume.basics}}
 	<section id="contact" class="row">
 		<aside class="col-sm-3">
-			<h3></h3>
+			<h3>Contact</h3>
 		</aside>
 		<div class="col-sm-9">
 			<div class="row">
@@ -62,7 +62,9 @@
 			{{#website}}
 			<div class="col-sm-6">
 				<strong>Website</strong>
-				<div class="website">{{.}}</div>
+				<div class="website">
+					<a href="{{.}}">{{.}}</a>
+				</div>
 			</div>
 			{{/website}}
 			</div>
@@ -97,11 +99,11 @@
 						{{.}}
 					</div>
 					{{/username}}
-					{{#url}}
+					{{#if url}}
 					<div class="url">
-						<a href="{{.}}">{{.}}</a>
+						<a href="{{url}}">Link</a>
 					</div>
-					{{/url}}
+					{{/if}}
 				</div>
 				{{/profiles}}
 			</div>
@@ -119,46 +121,32 @@
 			<div class="row">
 			{{#each resume.work}}
 			<div class="col-sm-12">
-				{{#company}}
-				<h3 class="name">
-					{{.}}
-				</h3>
-				{{/company}}
-				<div class="date">
-					{{#startDate}}
-					<span class="startDate">
-						{{.}}
+				<h4 class="strike-through">
+					<span>{{company}}</span>
+					<span class="date">
+						{{startDate}} — {{endDate}}
 					</span>
-					{{/startDate}}
-					{{#if endDate}}
-					<span class="endDate">
-						- {{endDate}}
-					</span>
-					{{else}}
-					<span class="endDate">
-						- Present
-					</span>
-					{{/if}}
+				</h4>
+				{{#website}}
+				<div class="website pull-right">
+					<a href="{{.}}">{{.}}</a>
 				</div>
+				{{/website}}
 				{{#position}}
 				<div class="position">
 					{{.}}
 				</div>
 				{{/position}}
-				{{#website}}
-				<div class="website">
-					<a href="{{.}}">{{.}}</a>
-				</div>
-				{{/website}}
 				{{#summary}}
 				<div class="summary">
 					<p>{{.}}</p>
 				</div>
 				{{/summary}}
 				{{#if highlights.length}}
+				<h4>Highlights</h4>
 				<ul class="highlights">
 					{{#highlights}}
-					<li>{{.}}</li>
+					<li class="bullet">{{.}}</li>
 					{{/highlights}}
 				</ul>
 				{{/if}}
@@ -178,46 +166,32 @@
 			<div class="row">
 			{{#each resume.volunteer}}
 			<div class="col-sm-12">
-				{{#organization}}
-				<h3 class="company">
-					{{.}}
-				</h3>
-				{{/organization}}
-				<div class="date">
-					{{#startDate}}
-					<span class="startDate">
-						{{.}}
+				<h4 class="strike-through">
+					<span>{{organization}}</span>
+					<span class="date">
+						{{startDate}} — {{endDate}}
 					</span>
-					{{/startDate}}
-					{{#if endDate}}
-					<span class="endDate">
-						- {{endDate}}
-					</span>
-					{{else}}
-					<span class="endDate">
-						- Present
-					</span>
-					{{/if}}
+				</h4>
+				{{#website}}
+				<div class="website pull-right">
+					<a href="{{.}}">{{.}}</a>
 				</div>
+				{{/website}}
 				{{#position}}
 				<div class="position">
 					{{.}}
 				</div>
 				{{/position}}
-				{{#website}}
-				<div class="website">
-					<a href="{{.}}">{{.}}</a>
-				</div>
-				{{/website}}
 				{{#summary}}
 				<div class="summary">
 					<p>{{.}}</p>
 				</div>
 				{{/summary}}
 				{{#if highlights.length}}
+				<h4>Highlights</h4>
 				<ul class="highlights">
 					{{#highlights}}
-					<li>{{.}}</li>
+					<li class="bullet">{{.}}</li>
 					{{/highlights}}
 				</ul>
 				{{/if}}
@@ -237,27 +211,12 @@
 			<div class="row">
 			{{#each resume.education}}
 			<div class="col-sm-12">
-				<div class="date">
-					{{#startDate}}
-					<span class="startDate">
-						{{.}}
+				<h4 class="strike-through">
+					<span>{{institution}}</span>
+					<span class="date">
+						{{startDate}} — {{endDate}}
 					</span>
-					{{/startDate}}
-					{{#if endDate}}
-					<span class="endDate">
-						- {{endDate}}
-					</span>
-					{{else}}
-					<span class="endDate">
-						- Present
-					</span>
-					{{/if}}
-				</div>
-				{{#institution}}
-				<div class="institution">
-					{{.}}
-				</div>
-				{{/institution}}
+				</h4>
 				{{#area}}
 				<div class="area">
 					{{.}}
@@ -268,12 +227,8 @@
 					{{.}}
 				</div>
 				{{/studyType}}
-				{{#gpa}}
-				<div class="gpa">
-					GPA: {{.}}
-				</div>
-				{{/gpa}}
 				{{#if courses.length}}
+				<h4>Courses</h4>
 				<ul class="courses">
 					{{#courses}}
 					<li>{{.}}</li>
@@ -296,19 +251,19 @@
 			<div class="row">
 			{{#each resume.awards}}
 			<div class="col-sm-12">
-				{{#title}}
-				<div class="title">
-					{{.}}
-				</div>
-				{{/title}}
+				<h4 class="strike-through">
+					<span>{{title}}</span>
+				</h4>
 				{{#date}}
-				<div class="date">
+				<div class="date pull-right">
+					<em>Awarded</em>
 					{{.}}
 				</div>
 				{{/date}}
 				{{#awarder}}
 				<div class="awarder">
-					{{.}}
+					<em>by</em>
+					<strong>{{.}}</strong>
 				</div>
 				{{/awarder}}
 				{{#summary}}
@@ -332,26 +287,23 @@
 			<div class="row">
 			{{#each resume.publications}}
 			<div class="col-sm-12">
-				{{#name}}
-				<div class="name">
-					{{.}}
-				</div>
-				{{/name}}
-				{{#publisher}}
-				<div class="publisher">
-					{{.}}
-				</div>
-				{{/publisher}}
-				{{#releaseDate}}
-				<div class="releaseDate">
-					{{.}}
-				</div>
-				{{/releaseDate}}
+				<h4 class="strike-through">
+					<span>{{name}}</span>
+					<span class="date">
+						{{releaseDate}}
+					</span>
+				</h4>
 				{{#website}}
-				<div class="website">
-					<a href="{{.}}">Link</a>
+				<div class="website pull-right">
+					<a href="{{.}}"></a>
 				</div>
 				{{/website}}
+				{{#publisher}}
+				<div class="publisher">
+					<em>Published by</em>
+					<strong>{{.}}</strong>
+				</div>
+				{{/publisher}}
 				{{#summary}}
 				<div class="summary">
 					{{.}}
@@ -375,14 +327,9 @@
 			<div class="col-sm-6">
 				{{#name}}
 				<div class="name">
-					{{.}}
+					<h4>{{.}}</h4>
 				</div>
 				{{/name}}
-				{{#level}}
-				<div class="level">
-					{{.}}
-				</div>
-				{{/level}}
 				{{#if keywords.length}}
 				<ul class="keywords">
 					{{#keywords}}
@@ -397,6 +344,7 @@
 	</section>
 	{{/if}}
 
+	<!--
 	{{#if resume.languages.length}}
 	<section id="languages" class="row">
 		<aside class="col-sm-3">
@@ -422,6 +370,7 @@
 		</div>
 	</section>
 	{{/if}}
+	-->
 
 	{{#if resume.interests.length}}
 	<section id="interests" class="row">
@@ -434,7 +383,7 @@
 			<div class="col-sm-6">
 				{{#name}}
 				<div class="name">
-					{{.}}
+					<h4>{{.}}</h4>
 				</div>
 				{{/name}}
 				{{#if keywords.length}}
@@ -460,16 +409,16 @@
 			<div class="row">
 			{{#each resume.references}}
 			<div class="col-sm-12">
-				{{#reference}}
+				{{#if reference}}
 				<blockquote class="reference">
-					{{.}}
+					<p>{{reference}}</p>
+					{{#name}}
+					<p class="name">
+						<strong>— {{.}}</strong>
+					</p>
+					{{/name}}
 				</blockquote>
-				{{/reference}}
-				{{#name}}
-				<div class="name">
-					— {{.}}
-				</div>
-				{{/name}}
+				{{/if}}
 			</div>
 			{{/each}}
 			</div>
