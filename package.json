@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-flat",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A theme for JSON Resume",
   "author": "Mattias Erming",
   "repository": {
@@ -11,8 +11,7 @@
     "start": "node serve"
   },
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4",
-    "resume-schema": "^0.0.11"
+    "handlebars": "^2.0.0-alpha.4"
   },
   "license": "MIT"
 }

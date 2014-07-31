@@ -306,7 +306,7 @@
 				{{/publisher}}
 				{{#summary}}
 				<div class="summary">
-					{{.}}
+					<p>{{.}}</p>
 				</div>
 				{{/summary}}
 			</div>
