@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>{{bio.firstName}} {{bio.lastName}}</title>
+	<title>{{basics.firstName}} {{basics.lastName}}</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
@@ -72,23 +72,6 @@
 		font: 13px Octicons;
 		opacity: .1;
 		margin: 6px 15px 0 0;
-	}
-	#wip {
-		background: #f1c40f;
-		color: #fff;
-		font-size: 12px;
-		font-weight: bold;
-		padding: 10px 16px;
-		position: absolute;
-		right: 50px;
-		top: 0px;
-		word-spacing: 2px;
-	}
-	#wip:hover {
-		opacity: .8;
-	}
-	#wip .octicon {
-		margin-right: 8px;
 	}
 	#header {
 		background: #f4f6f6;
@@ -206,9 +189,6 @@
 		}
 	}
 	@media (max-width: 768px) {
-		#wip {
-			display: none;
-		}
 		#header {
 			padding: 50px 0 40px;
 		}
@@ -255,15 +235,11 @@
 
 	<header id="header">
 		<div class="container">
-			<a href="https://github.com/erming/jsonresume-theme-flat" id="wip">
-				<span class="octicon octicon-mark-github"></span>
-				Work in progress
-			</a>
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-9">
-					<h1>{{bio.firstName}} {{bio.lastName}}</h1>
-					<h2>{{bio.location.city}}</h2>
+					<h1>{{basics.name}}</h1>
+					<h2>{{basics.label}}</h2>
 				</div>
 			</div>
 		</div>
@@ -275,7 +251,7 @@
 					<h3>About</h3>
 				</aside>
 				<div class="col-sm-9">
-					<p>{{{nl2br bio.summary}}}</p>
+					<p>{{{nl2br basics.summary}}}</p>
 				</div>
 			</section>
 			<section id="contact" class="row">
@@ -284,34 +260,16 @@
 				</aside>
 				<div class="col-sm-9">
 					<div class="row">
-					{{#if bio.email.personal}}
+					{{#if basics.email}}
 					<ul class="col-sm-6">
 						<li>Email</li>
-						<li>{{bio.email.personal}}</li>
+						<li>{{basics.email}}</li>
 					</ul>
 					{{/if}}
-					{{#if bio.phone.personal}}
+					{{#if basics.phone}}
 					<ul class="col-sm-6">
 						<li>Phone</li>
-						<li>{{bio.phone.personal}}</li>
-					</ul>
-					{{/if}}
-					{{#if bio.profiles.github}}
-					<ul class="col-sm-6">
-						<li>GitHub</li>
-						<li><a href="http://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a></li>
-					</ul>
-					{{/if}}
-					{{#if bio.websites.blog}}
-					<ul class="col-sm-6">
-						<li>Blog</li>
-						<li><a href="{{bio.websites.blog}}">{{bio.websites.blog}}</a></li>
-					</ul>
-					{{/if}}
-					{{#if bio.profiles.twitter}}
-					<ul class="col-sm-6">
-						<li>Twitter</li>
-						<li><a href="http://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a></li>
+						<li>{{basics.phone}}</li>
 					</ul>
 					{{/if}}
 					</div>
