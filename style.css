@@ -1,0 +1,19 @@
+body {
+	background: #fff;
+	margin: 40px 0 80px;
+}
+h1,
+h2,
+h3 {
+	margin: 0
+}
+section {
+	margin-top: 20px;
+}
+.container {
+	max-width: 750px;
+	padding: 0 30px;
+}
+#header {
+	padding: 20px 0;
+}
