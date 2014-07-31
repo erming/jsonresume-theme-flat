@@ -54,6 +54,10 @@ em {
 	font-weight: normal;
 	font-style: normal;
 }
+h4 span:first-child {
+	color: #000;
+	font-weight: bold;
+}
 .container {
 	max-width: 750px;
 	padding: 0 30px;
@@ -77,13 +81,15 @@ em {
 	font-size: 24px;
 }
 #content h3 {
-	font-size: 26px;
 	color: #f1c40f;
+	font-size: 26px;
+	margin-top: -4px;
 }
 #content aside {
 	text-align: right;
 	padding-right: 30px;
 }
+
 #work .position,
 #volunteer .position {
 	font-weight: bold;
@@ -162,5 +168,8 @@ em {
 	#header {
 		margin-bottom: 10px;
 		padding: 40px 0;
+	}
+	#actions {
+		display: none;
 	}
 }
