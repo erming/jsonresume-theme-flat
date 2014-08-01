@@ -89,7 +89,9 @@ h4 span:first-child {
 	text-align: right;
 	padding-right: 30px;
 }
-
+#profiles .network {
+	text-transform: capitalize;
+}
 #work .position,
 #volunteer .position {
 	font-weight: bold;

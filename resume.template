@@ -93,15 +93,22 @@
 						{{.}}
 					</strong>
 					{{/network}}
-					{{#username}}
+					{{#if username}}
 					<div class="username">
-						{{.}}
+						{{#if url}}
+						<div class="url">
+							<a href="{{url}}">{{username}}</a>
+						</div>
+						{{else}}
+							{{username}}
+						{{/if}}
 					</div>
-					{{/username}}
-					{{#if url}}
-					<div class="url">
-						<a href="{{url}}">Link</a>
-					</div>
+					{{else}}
+						{{#if url}}
+						<div class="url">
+							<a href="{{url}}">{{url}}</a>
+						</div>
+						{{/if}}
 					{{/if}}
 				</div>
 				{{/profiles}}
