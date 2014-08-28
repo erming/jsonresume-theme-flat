@@ -350,7 +350,6 @@
 	</section>
 	{{/if}}
 
-	<!--
 	{{#if resume.languages.length}}
 	<section id="languages" class="row">
 		<aside class="col-sm-3">
@@ -362,7 +361,7 @@
 			<div class="col-sm-4">
 				{{#language}}
 				<div class="language">
-					{{.}}
+					<strong>{{.}}</strong>
 				</div>
 				{{/language}}
 				{{#fluency}}
@@ -376,7 +375,6 @@
 		</div>
 	</section>
 	{{/if}}
-	-->
 
 	{{#if resume.interests.length}}
 	<section id="interests" class="row">
