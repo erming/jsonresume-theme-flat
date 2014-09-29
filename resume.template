@@ -358,7 +358,7 @@
 		<div class="col-sm-9">
 			<div class="row">
 			{{#each resume.languages}}
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				{{#language}}
 				<div class="language">
 					<strong>{{.}}</strong>
